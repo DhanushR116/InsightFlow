@@ -1,3 +1,4 @@
+
 from decimal import Decimal
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -25,7 +26,8 @@ class OrderItemResponse(BaseModel):
 class OrderResponse(BaseModel):
     id: int
     customer_id: int
+    customer_name: str
     total_amount: Decimal
-    items: list[OrderItemResponse] = []
+    items: list[OrderItemResponse] = Field(default_factory=list)
 
     model_config = ConfigDict(from_attributes=True)

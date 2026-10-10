@@ -1,3 +1,4 @@
+
 from decimal import Decimal
 
 from sqlalchemy import ForeignKey, Numeric
@@ -28,3 +29,7 @@ class Order(Base):
         back_populates="order",
         cascade="all, delete-orphan",
     )
+
+    @property
+    def customer_name(self) -> str:
+        return self.customer.name

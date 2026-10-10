@@ -511,7 +511,7 @@ function Orders() {
 
                       <td>
                         <strong className="table-primary">
-                          Customer #{order.customer_id}
+                          Customer #{order.customer_name}
                         </strong>
                       </td>
 
